@@ -149,7 +149,7 @@ This password will be used in the next step.
 ### Generate a target server certificate from server csr
 **Step 5:** Generate a private signed server certificate for the target server from the server csr by executing the following:
 ```console
-sudo openssl x509 -req -sha256 -days 9999 -in registry.csr -CA ca.pem -CAkey ca.key -passin file:pass.txt -CAcreateserial -extfile registry.ext -out registry.crt 
+sudo openssl x509 -req -sha256 -days 9999 -in registry.csr -CA ca.crt -CAkey ca.key -passin file:pass.txt -CAcreateserial -extfile registry.ext -out registry.crt 
 ```
 Running the above commands should create the following files:
 - registry.crt -- this goes into the Nginx conf file as SSLCertificateFile
